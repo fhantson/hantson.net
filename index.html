@@ -6,36 +6,83 @@
   <title>Filip Hantson</title>
   <style>
     :root {
-      --bg: #0d1117;
+      --bg: #07090f;
       --text: #e6edf3;
       --muted: #8b949e;
       --accent: #58a6ff;
-      --card: #161b22;
-      --border: #30363d;
+      --card: rgba(22, 27, 34, 0.75);
+      --border: rgba(48, 54, 61, 0.8);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      background: var(--bg);
       color: var(--text);
       line-height: 1.6;
+      min-height: 100vh;
+      background: #07090f;
+      position: relative;
+      overflow-x: hidden;
+    }
+    /* Cool animated background */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(ellipse 80% 50% at 20% 40%, rgba(56, 139, 253, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 70% at 80% 20%, rgba(88, 166, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 40% at 40% 80%, rgba(31, 111, 235, 0.12) 0%, transparent 50%),
+        linear-gradient(135deg, #07090f 0%, #0d1117 50%, #0a0e17 100%);
+      animation: drift 25s ease-in-out infinite alternate;
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background-image:
+        radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+    @keyframes drift {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-2%, 1%) scale(1.05); }
+      100% { transform: translate(1%, -1%) scale(1.02); }
     }
     .container {
       max-width: 720px;
       margin: 0 auto;
-      padding: 3rem 1.5rem;
+      padding: 3.5rem 1.5rem 4rem;
+      position: relative;
+      z-index: 1;
     }
     h1 {
-      font-size: 2.4rem;
+      font-size: 2.6rem;
       font-weight: 600;
-      margin: 0 0 0.4rem;
-      letter-spacing: -0.02em;
+      margin: 0 0 1.25rem;
+      letter-spacing: -0.03em;
     }
-    .tagline {
-      font-size: 1.15rem;
-      color: var(--muted);
-      margin: 0 0 2rem;
+    .header-links {
+      margin-bottom: 2.5rem;
+    }
+    .header-links a {
+      display: inline-block;
+      background: rgba(88, 166, 255, 0.15);
+      border: 1px solid rgba(88, 166, 255, 0.4);
+      color: var(--accent);
+      padding: 0.5rem 1.1rem;
+      border-radius: 6px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .header-links a:hover {
+      background: rgba(88, 166, 255, 0.25);
+      text-decoration: none;
+      transform: translateY(-1px);
     }
     h2 {
       font-size: 1.25rem;
@@ -57,8 +104,9 @@
     .card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.25rem;
+      border-radius: 10px;
+      padding: 1.35rem;
+      backdrop-filter: blur(8px);
     }
     .card h3 {
       margin: 0 0 0.5rem;
@@ -68,12 +116,6 @@
       margin: 0 0 0.75rem;
       color: var(--muted);
       font-size: 0.95rem;
-    }
-    .links {
-      margin-top: 2rem;
-    }
-    .links a {
-      margin-right: 1.25rem;
     }
     footer {
       margin-top: 3rem;
@@ -87,16 +129,15 @@
 <body>
   <div class="container">
     <h1>Filip Hantson</h1>
-    <p class="tagline">What was true when.</p>
+    <div class="header-links">
+      <a href="https://www.linkedin.com/in/filip-hantson" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
 
     <h2>About</h2>
     <p>
       Filip Hantson works on time-aware data systems that preserve what was known when decisions were made.
       Currently focused on Cryptomnia (the memory layer for crypto risk and attribution) and Pod-OS at PointOfData.
       Based in Spokane Valley, WA.
-    </p>
-    <p>
-      <a href="https://www.linkedin.com/in/filip-hantson" target="_blank" rel="noopener">LinkedIn</a>
     </p>
 
     <h2>Projects</h2>
@@ -114,7 +155,7 @@
     </div>
 
     <h2>Contact</h2>
-    <p>Reach out via LinkedIn or the contact options on the project sites.</p>
+    <p>Reach out via <a href="https://www.linkedin.com/in/filip-hantson" target="_blank" rel="noopener">LinkedIn</a> or the contact options on the project sites.</p>
 
     <footer>
       <p>hantson.net</p>
