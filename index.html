@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filip Hantson</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --card: #161b22;
+      --border: #30363d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      margin: 0 0 0.4rem;
+      letter-spacing: -0.02em;
+    }
+    .tagline {
+      font-size: 1.15rem;
+      color: var(--muted);
+      margin: 0 0 2rem;
+    }
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 2.5rem 0 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+    }
+    p { margin: 0 0 1rem; }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+    .projects {
+      display: grid;
+      gap: 1rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+    .card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.1rem;
+    }
+    .card p {
+      margin: 0 0 0.75rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .links {
+      margin-top: 2rem;
+    }
+    .links a {
+      margin-right: 1.25rem;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Filip Hantson</h1>
+    <p class="tagline">What was true when.</p>
+
+    <h2>About</h2>
+    <p>
+      Filip Hantson works on time-aware data systems that preserve what was known when decisions were made.
+      Currently focused on Cryptomnia (the memory layer for crypto risk and attribution) and Pod-OS at PointOfData.
+      Based in Spokane Valley, WA.
+    </p>
+    <p>
+      <a href="https://www.linkedin.com/in/filip-hantson" target="_blank" rel="noopener">LinkedIn</a>
+    </p>
+
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Cryptomnia</h3>
+        <p>Memory layer for crypto. Stores risk scores, attributions, and claims as time-stamped Event Objects so you can prove what was known at the moment a decision was made. Includes auditable forgetting and full provenance. Built on Pod-OS.</p>
+        <a href="https://cryptomnia.com" target="_blank" rel="noopener">cryptomnia.com</a>
+      </div>
+      <div class="card">
+        <h3>PointOfData / Pod-OS</h3>
+        <p>Time-aware multigraph database where every fact is an Event Object carrying its embedding, typed fields, validity interval, source, and confidence. Designed so AI and compliance systems can answer as-of and point-in-time questions instead of operating on last-write-wins snapshots.</p>
+        <a href="https://pointofdata.ai" target="_blank" rel="noopener">pointofdata.ai</a>
+      </div>
+    </div>
+
+    <h2>Contact</h2>
+    <p>Reach out via LinkedIn or the contact options on the project sites.</p>
+
+    <footer>
+      <p>hantson.net</p>
+    </footer>
+  </div>
+</body>
+</html>
